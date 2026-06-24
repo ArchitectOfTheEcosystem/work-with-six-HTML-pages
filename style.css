@@ -1,4 +1,5 @@
 :root {
+    --form-width: 420px;
     --color-bg: #202124;
     --color-surface: #292a2d;
     --color-accent: #8ab4f8;
@@ -21,7 +22,6 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: 'Inter', sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -40,7 +40,11 @@ form {
     padding: 32px;
     border-radius: 12px;
     width: 100%;
-    max-width: 360px;
+    max-width: var(--form-width);
+}
+
+form {
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
 .brand {
@@ -48,6 +52,7 @@ form {
     align-items: center;
     gap: 10px;  
     margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -111,17 +116,31 @@ input {
     cursor: text;
 }
 
+input:hover {
+    border-color: var(--color-accent);
+}
+
 input:focus {
     border-color: var(--color-accent);
 }
 
 input:focus-visible {
-    outline: 2px solid var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(138,180,248,.25);
 }
 
 input::placeholder {
     color: var(--color-border);
     font-size: 14px;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #ff6b6b;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 4px;
 }
 
 button {
@@ -142,6 +161,10 @@ button {
 button:hover {
     background-color: var(--color-accent);
     color: var(--color-bg);
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 .login-link {
