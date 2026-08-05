@@ -7,6 +7,7 @@
     --color-muted: #9aa0a6;
     --color-input: #303134;
     --color-border: #5f6368;
+    --color-placeholder: #8b9199;
 }
 /* Основные цвета вынесены в переменные выше */
 
@@ -51,7 +52,7 @@ form {
     display: flex;
     align-items: center;
     gap: 10px;  
-    margin-bottom: 24px;
+    margin-bottom: 50px;
     flex-wrap: wrap;
 }
 
@@ -63,9 +64,9 @@ form {
 }
 
 .brand-tagline {
-    font-size: 10px;
+    font-size: 13px;
     color: var(--color-muted);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     border-left: 2px solid var(--color-accent);
     padding-left: 8px;
@@ -90,14 +91,14 @@ legend {
     letter-spacing: 1px;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     text-align: center;
     width: 100%;
 }
 
 label {
     display: block;
-    margin-bottom: 6px;
+    padding-bottom: 6px;
     color: var(--color-muted);
     font-size: 14px;
     font-weight: 500;
@@ -129,7 +130,7 @@ input:focus-visible {
 }
 
 input::placeholder {
-    color: var(--color-border);
+    color: var(--color-placeholder);
     font-size: 14px;
 }
 
@@ -148,13 +149,13 @@ button {
     padding: 8px;
     background-color: transparent;
     color: var(--color-accent);    
-    border: 1px solid var(--color-accent);
+    border: 3px solid var(--color-accent);
     border-radius: 6px;
     font-size: 16px;
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 30px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -167,18 +168,25 @@ button:active {
     transform: scale(0.98);
 }
 
-.login-link {
+.login-link,
+.reset-password-link {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 40px;
     font-size: 13px;
     color: var(--color-muted);
 }
 
-.login-link a {
+.login-link a,
+.reset-password-link a {
     color: var(--color-accent);
     text-decoration: none;
 }
 
-.login-link a:hover {
+.login-link a:hover,
+.reset-password-link a:hover {
     text-decoration: underline;
+}
+
+.reset-password-link {
+    margin-top: 25px;
 }
